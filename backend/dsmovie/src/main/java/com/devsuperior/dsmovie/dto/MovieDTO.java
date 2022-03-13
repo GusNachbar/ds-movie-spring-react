@@ -1,11 +1,10 @@
 package com.devsuperior.dsmovie.dto;
 
 import com.devsuperior.dsmovie.entities.Movie;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class MovieDTO {
@@ -14,6 +13,7 @@ public class MovieDTO {
     private Double score;
     private Integer count;
     private String image;
+
 
     public MovieDTO(Movie movie){
         this.id = movie.getId();
