@@ -22,4 +22,11 @@ public class MovieService {
         Page<Movie> movies = movieRepository.findAll(pegeable);
         return movies.map(MovieDTO::new);
     }
+
+    @Transactional(readOnly = true)
+    public MovieDTO findMovie(Long id){
+        Movie movie = movieRepository.findById(id).get();
+        MovieDTO dto = new MovieDTO(movie);
+        return dto;
+    }
 }
